@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    border-radius: 5px;
+    padding: 20px 25px;
+    display: grid;
+    grid-template-rows: 200px 100px 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    grid-auto-rows: auto;
+    justify-content: center;
+    background-color: #e5c4ee;
+    place-items: center;
+}
+
+#top {
+    line-height: 1.2;
+    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333333;
+  }
+#ziehungen{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 80%;
+    height: 70%;
+    padding: 12px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4a0a5b;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-row: 2;
+}
+
+#obtain {
+    grid-column: span 5;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: dense;
+    grid-auto-rows: 200px;
+    place-items: center;
+}
+
+button:hover {
+    background-color: #db2dca;
+}
+
+button:active {
+    background-color: #3d1e76;
+}
+
+.item {
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+    margin: 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.item_h {
+    color: #3d1e76;
+}
+
+.c {
+
+    border: 8px solid rgb(72, 210, 72);
+}
+
+.r {
+    border: 8px solid rgb(93, 93, 214);
+}
+
+.l {
+    border: 8px solid rgb(247, 163, 9);
+}
+
+#itemlistcontainer{
+    height: 100%;
+    width: 100%;
+    grid-column: span 5;
+    grid-row: 4;
+}
+
+#itemlist {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: row;
+}
