@@ -31,9 +31,11 @@ class MySession {
     }
     setAutoLegendCOunt(){
         this.autoLegendCount += 1;
+        console.log('auto+1', this.autoLegendCount);
     }
     resetAutoLegendCount(){
-        this.autoLegendCount = this.autoLegendCount - 90;
+        this.autoLegendCount = this.autoLegendCount = 0;
+        console.log('resetted');
     }
 
     getLootlist(){
@@ -111,12 +113,16 @@ function pullOne(item, session) {
         if (random < rareRateHigh) {
             currentItem = getRandomItemByRate(item, 2);
             itemArray.push(currentItem);
+            session.resetAutoLegendCount();
+
         } else if (random < rareRateMiddle) {
             currentItem = getRandomItemByRate(item, 1);
             itemArray.push(currentItem);
+            session.setAutoLegendCOunt();
         } else {
             currentItem = getRandomItemByRate(item, 0);
             itemArray.push(currentItem);
+            session.setAutoLegendCOunt();
         }
         currentItem.setCount();
         session.setLootlist(itemArray);
@@ -175,8 +181,10 @@ function pullTen(item, session) {
                 session.resetAutoLegendCount();
             } else if (random < rareRateMiddle) {
                 currentItem = getRandomItemByRate(item, 1);
+                session.setAutoLegendCOunt();
             } else {
                 currentItem = getRandomItemByRate(item, 0);
+                session.setAutoLegendCOunt();
             }
             if(session.getAutoLegendCount() === 90){
                 console.log('garantiert!!!');
@@ -271,14 +279,14 @@ function createItemList(session) {
 }
 const changeToLegendary = (item) => {
     let legendArray = item.filter(loot => loot.rate === 2);
-    let randInt = Math.floor(Math.random() * item.length);
+    let randInt = Math.floor(Math.random() * legendArray.length);
     let newLegendary = legendArray[randInt];
     return newLegendary;
 }
 
 // zählt Ziehungen hoch
 const displayZiehung = (session) => {
-    const display = document.getElementById('ziehungen');
+    const display = document.getElementById('gesamt');
     display.innerHTML = session.getZiehung();
 }
 

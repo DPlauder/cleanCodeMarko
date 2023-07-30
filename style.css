@@ -7,6 +7,7 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: #35281E;
 }
 
 .content {
@@ -15,17 +16,15 @@ body {
     border-radius: 5px;
     padding: 20px 25px;
     display: grid;
-    grid-template-rows: 200px 100px 1fr 1fr;
+    grid-template-rows: 100px 100px 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     grid-auto-rows: auto;
     justify-content: center;
-    background-color: #e5c4ee;
     place-items: center;
 }
 
 #top {
-    line-height: 1.2;
     grid-column: 1/3;
     width: 100%;
     height: 100%;
@@ -38,40 +37,36 @@ h1 {
     font-size: 36px;
     font-weight: bold;
     color: #333333;
+    grid-column: 1 / span 2;
+    color: #db2dca;
   }
-#ziehungen{
-    height: 100px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 button {
-    width: 80%;
+    width: 50%;
     height: 70%;
     padding: 12px 50px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #4a0a5b;
-    border-radius: 20px;
-    border: none;
+    background-color: gray;
+    border: 2px solid gray;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
     grid-row: 2;
 }
 
 #obtain {
+    width: 100%;
     grid-column: span 5;
     grid-row: 3;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-flow: dense;
     grid-auto-rows: 200px;
-    place-items: center;
+
 }
 
 button:hover {
@@ -109,21 +104,42 @@ button:active {
 }
 
 #itemlistcontainer{
+    margin-top: 50px;
     height: 100%;
     width: 100%;
     grid-column: span 5;
     grid-row: 4;
+    color: white;
 }
 
 #itemlist {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #35281E;
     width: 50%;
     display: flex;
     flex-direction: column;
+    
 }
-
+.list_info{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    justify-items: center;
+}
 .itemrow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    justify-items: center;
+
+}
+.items_count {
+    font-size: 1.2em;
+    font-weight: bold;
+    border-top: 1px solid gray;
+    background-color: white;
+    color: black;
 }
